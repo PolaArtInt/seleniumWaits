@@ -44,8 +44,11 @@ class URL2Locks:
     visible_after_5_sec_btn = ('xpath', '//button[@id="visibleAfter"]')
 
 
-
 class URL3Locks:
-    pass
-
+    link_1 = ('xpath', '(//a)[2]')
+    link_2 = ('xpath', '(//a)[3]')
+    start_btn = ('xpath', '//div[@id="start"]/button')
+    page_header_h4 = ('xpath', '//h4')
+    loader = ('xpath', '//div[@id="loading"]')
+    final_msg = ('xpath', '//div[@id="finish"]')
 
