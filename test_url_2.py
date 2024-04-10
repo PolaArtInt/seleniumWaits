@@ -1,5 +1,4 @@
 import time
-
 import pytest
 from selenium.webdriver.support import expected_conditions as ec
 from locators import URLS, URL2Locks
@@ -45,4 +44,3 @@ def test_visible_after_5_sec_btn(driver, exp_wait):
 
     btn_visible = exp_wait.until(ec.visibility_of_element_located(URL2Locks.visible_after_5_sec_btn))
     assert btn_visible.is_displayed(), 'Button is not visible'
-

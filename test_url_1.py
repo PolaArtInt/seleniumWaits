@@ -34,5 +34,3 @@ def test_reveal_input(driver, exp_wait):
     exp_wait.until(ec.element_to_be_clickable(URL1Locks.add_input_btn)).click()
     input_revealed = exp_wait.until(ec.visibility_of_element_located(URL1Locks.new_input))
     assert input_revealed, 'New input in not appearing'
-
-

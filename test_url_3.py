@@ -1,5 +1,4 @@
 import time
-
 import pytest
 from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as ec
@@ -39,10 +38,10 @@ def test_element_rendered_after(driver, exp_wait):
     assert header.text == 'Example 2: Element rendered after the fact', 'Wrong header'
 
     # element in not located in DOM yet:
-    # try:
-    #     exp_wait.until(ec.presence_of_element_located(URL3Locks.final_msg))
-    # except (NoSuchElementException, TimeoutException, AssertionError) as er:
-    #     print(f'{er} Element not found')
+    try:
+        exp_wait.until(ec.presence_of_element_located(URL3Locks.final_msg))
+    except (NoSuchElementException, TimeoutException, AssertionError):
+        pass
 
     exp_wait.until(ec.presence_of_element_located(URL3Locks.start_btn)).click()
     loader = driver.find_element(*URL3Locks.loader)

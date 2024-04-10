@@ -1,6 +1,5 @@
 import time
 import pytest
-from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as ec
 from locators import URLS, MainLocks, Messages, Data
 
@@ -51,9 +50,10 @@ def test_implicit_wait(driver, imp_wait, form_conditions):
         # time.sleep(3)  # test falls without time.sleep here :-)
         expected_msg = driver.find_element(*MainLocks.success_box)
         assert expected_msg.text == Messages.success_msg, 'Success message is not appearing'
-        print(expected_msg.text)
-    except (NoSuchElementException, TimeoutException, AssertionError) as er:
-        print(f'{er} Element not found')
+    except AssertionError as er:
+        print(f'Error: {er}')
+    else:
+        print('Element not found')
 
 
 @pytest.mark.positive
@@ -84,4 +84,3 @@ def test_time_sleep(driver):
     expected_msg = driver.find_element(*MainLocks.success_box)
     assert expected_msg.text == Messages.success_msg, 'Success message is not appearing'
     print(expected_msg.text)
-
