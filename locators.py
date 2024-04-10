@@ -38,7 +38,11 @@ class URL1Locks:
 
 
 class URL2Locks:
-    pass
+    random_id_text = ('xpath', '//p[contains(text(),"This text has random Id")]')
+    enable_after_5_sec_btn = ('xpath', '//button[@id="enableAfter"]')
+    change_color_btn = ('xpath', '//button[@id="colorChange"]')
+    visible_after_5_sec_btn = ('xpath', '//button[@id="visibleAfter"]')
+
 
 
 class URL3Locks:
