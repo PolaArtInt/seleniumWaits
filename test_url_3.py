@@ -23,7 +23,7 @@ def test_element_hidden(driver, exp_wait):
     loader = driver.find_element(*URL3Locks.loader)
     assert loader.is_displayed(), 'Loader is not displayed'
 
-    time.sleep(5)
+    time.sleep(5)  # wait until css property changes
 
     style_after = hello.value_of_css_property('display')
     assert style_after == 'block', 'Element is not visible'
